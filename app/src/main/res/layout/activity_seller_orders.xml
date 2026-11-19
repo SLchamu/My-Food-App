@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream"
+    android:fillViewport="true"
+    tools:context=".SellerOrdersActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Top Header Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnOrdersBack"
+                style="@style/ModernButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Back"
+                android:backgroundTint="#FF5722"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Seller Orders"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_orange" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ලැබුණු ඇණවුම් (Received Buyer Orders)"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:gravity="center"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Empty State Notice -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardEmptyOrders"
+            style="@style/ModernCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvEmptyOrdersMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="📦 No buyer orders received yet.\n\nWhen a buyer scans your QR code and places an order, it will appear here!"
+                android:textSize="15sp"
+                android:textColor="@color/text_muted"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:padding="24dp" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Live Buyer Order Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardLiveOrder"
+            style="@style/ModernCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Order #1001 (Live)"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_orange" />
+
+                    <TextView
+                        android:id="@+id/tvLiveStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:text="🔔 New Order"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#D32F2F" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvLiveBuyerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="👤 Buyer Name: N/A"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvLiveBuyerPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📞 Phone: N/A"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvLiveBuyerAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Address: N/A"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_muted"
+                    android:layout_marginTop="4dp" />
+
+                <!-- Ordered Items List Container -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/primary_orange_light"
+                    android:padding="12dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="📦 Ordered Items:"
+                        android:textStyle="bold"
+                        android:textColor="@color/primary_orange" />
+
+                    <TextView
+                        android:id="@+id/tvLiveOrderItems"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No items"
+                        android:textColor="@color/text_dark"
+                        android:textSize="14sp"
+                        android:layout_marginTop="4dp" />
+                </LinearLayout>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="14dp">
+
+                    <Button
+                        android:id="@+id/btnLiveAccept"
+                        style="@style/ModernButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Accept"
+                        android:backgroundTint="@color/seller_green"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:id="@+id/btnLiveComplete"
+                        style="@style/ModernButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Complete"
+                        android:backgroundTint="#2196F3"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginEnd="4dp" />
+
+                    <Button
+                        android:id="@+id/btnLiveReject"
+                        style="@style/ModernButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Reject"
+                        android:backgroundTint="#D32F2F"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

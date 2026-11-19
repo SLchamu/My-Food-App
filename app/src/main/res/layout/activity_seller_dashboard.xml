@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream"
+    android:fillViewport="true"
+    tools:context=".SellerDashboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Top Header Bar -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnSellerDashboardBack"
+                style="@style/ModernButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="Back"
+                android:backgroundTint="#FF5722"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Seller Dashboard"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/primary_orange" />
+        </RelativeLayout>
+
+        <!-- QR Code Display Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/ModernCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📱 Your Seller Connection QR Code"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_orange"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Show this QR code to Buyers to connect"
+                    android:textSize="13sp"
+                    android:textColor="@color/text_muted"
+                    android:layout_marginBottom="16dp" />
+
+                <ImageView
+                    android:id="@+id/ivSellerQrCode"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:scaleType="fitCenter"
+                    android:background="@color/white"
+                    android:contentDescription="Seller QR Code"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvSellerUidDisplay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seller UID: Loading..."
+                    android:textSize="14sp"
+                    android:textColor="@color/text_dark"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <Button
+                    android:id="@+id/btnDownloadDashboardQr"
+                    style="@style/ModernButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💾 Download QR Code"
+                    android:backgroundTint="#FF9800"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Seller Business Profile Card -->
+        <androidx.cardview.widget.CardView
+            style="@style/ModernCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🏪 Registered Business Profile"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/seller_green"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView
+                    android:id="@+id/tvSellerProfileDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading profile details..."
+                    android:textSize="15sp"
+                    android:textColor="@color/text_dark"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Next Button -->
+        <Button
+            android:id="@+id/btnGoToSellerProfile"
+            style="@style/ModernButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Next ➡️ Go to Seller Profile"
+            android:backgroundTint="@color/seller_green"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="12dp" />
+
+    </LinearLayout>
+</ScrollView>

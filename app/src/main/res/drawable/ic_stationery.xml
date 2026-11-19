@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- Notebook Cover -->
+    <path
+        android:fillColor="#E65100"
+        android:pathData="M4,3 h12 c1.1,0 2,0.9 2,2 v14 c0,1.1 -0.9,2 -2,2 H4 c-1.1,0 -2,-0.9 -2,-2 V5 c0,-1.1 0.9,-2 2,-2 Z"/>
+    <!-- Notebook Spine Accent -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M4,3 h3 v18 H4 Z"/>
+    <!-- Notebook Page Lines -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M9,7 h6 v2 H9 Z M9,11 h6 v2 H9 Z M9,15 h4 v2 H9 Z"/>
+    <!-- Pencil -->
+    <path
+        android:fillColor="#4CAF50"
+        android:pathData="M18.5,2.5 l3,3 -12,12 -3.5,0.5 0.5,-3.5 Z"/>
+    <path
+        android:fillColor="#2E7D32"
+        android:pathData="M20,1 l3,3 -2,2 -3,-3 Z"/>
+</vector>

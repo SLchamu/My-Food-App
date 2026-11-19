@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_cream"
+    android:fillViewport="true"
+    tools:context=".Seller">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:gravity="center_horizontal">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:id="@+id/layoutSellerHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_store"
+                android:contentDescription="Seller Header Icon"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seller Registration"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="@color/seller_green" />
+        </LinearLayout>
+
+        <!-- Form Hero Card -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSellerForm"
+            style="@style/ModernCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <EditText
+                    android:id="@+id/etSellerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="👤 Your Name"
+                    android:inputType="textPersonName"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etShopName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="🏪 Shop Name"
+                    android:inputType="text"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etShopPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="📞 Phone Number"
+                    android:inputType="phone"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etShopAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="📍 Shop Address"
+                    android:inputType="textPostalAddress"
+                    android:layout_marginBottom="12dp" />
+
+                <EditText
+                    android:id="@+id/etShopLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="🗺️ Shop Location Details"
+                    android:inputType="text"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Location Photo Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Location Photo"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/ivLocationPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:background="#E0E0E0"
+                            android:src="@drawable/ic_upload_qr"
+                            android:contentDescription="Location Photo Preview" />
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/btnUploadLocationPhoto"
+                        style="@style/ModernButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:text="Upload Location Photo"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <!-- Shop Photo Section -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="🏪 Shop Photo"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="24dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="12dp"
+                        app:cardElevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/ivShopPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:background="#E0E0E0"
+                            android:src="@drawable/ic_store"
+                            android:contentDescription="Shop Photo Preview" />
+                    </androidx.cardview.widget.CardView>
+
+                    <Button
+                        android:id="@+id/btnUploadPhoto"
+                        style="@style/ModernButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="14dp"
+                        android:text="Upload Shop Photo"
+                        android:backgroundTint="#FF9800"
+                        android:textColor="#FFFFFF" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnSaveSeller"
+                    style="@style/ModernButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Register Seller"
+                    android:backgroundTint="@color/seller_green"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
